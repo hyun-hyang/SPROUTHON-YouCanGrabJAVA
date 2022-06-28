@@ -36,7 +36,7 @@ public class ItemList {
 	}
 	
 	public void fileload() {
-		File sourceFile = new File("메뉴리스트.txt");
+		File sourceFile = new File("src/메뉴리스트.txt");
 		try {
 			BufferedReader bis = new BufferedReader(new FileReader(sourceFile));
 			String lineString = "";
@@ -58,7 +58,7 @@ public class ItemList {
 		}
 	}
 	public void printItemList() {
-		File targetFile = new File("gui용 메뉴리스트.txt");
+		File targetFile = new File("src/gui용 메뉴리스트.txt");
 		try {
 			ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(targetFile));
 			objectOutputStream.writeObject(itemList);
