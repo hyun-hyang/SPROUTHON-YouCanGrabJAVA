@@ -17,8 +17,8 @@ public class ItemList {
 		ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "병음료", "디저트"));
 
 		classificationList.add("커피");
-		fileload();
-		printItemList();
+		//fileload();
+		//printItemList();
 	}
 	
 	public static boolean checkClassification (String newclassification) {
@@ -36,7 +36,7 @@ public class ItemList {
 	}
 	
 	public void fileload() {
-		File sourceFile = new File("src/메뉴리스트.txt");
+		File sourceFile = new File("txtsrc/메뉴리스트.txt");
 		try {
 			BufferedReader bis = new BufferedReader(new FileReader(sourceFile));
 			String lineString = "";
@@ -58,7 +58,7 @@ public class ItemList {
 		}
 	}
 	public void printItemList() {
-		File targetFile = new File("src/gui용 메뉴리스트.txt");
+		File targetFile = new File("txtsrc/gui용 메뉴리스트.txt");
 		try {
 			ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(targetFile));
 			objectOutputStream.writeObject(itemList);
