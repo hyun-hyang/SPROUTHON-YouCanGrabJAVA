@@ -14,7 +14,7 @@ public class ItemList {
 	
 	public ItemList() {
 		ArrayList<Item> itemList = new ArrayList<> ();
-		ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "병음료", "디저트"));
+		ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "디저트"));
 
 		classificationList.add("커피");
 		//fileload();
