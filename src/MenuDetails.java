@@ -1,13 +1,15 @@
 
-public class MenuDetails{
+public class MenuDetails extends Item{
 	private boolean isICE; // hot/ice 여부 
 	private boolean sizeUp; // 사이즈 업
 	private boolean extraShot; // 샷 추가
 	private boolean addWhippedCream; // 휘핑 추가
 	private boolean isDecaffeinated; // 디카페인
 	private boolean isTumbler; //텀블러 여부
-
-	public MenuDetails(boolean isICE, boolean sizeUp, boolean extraShot, boolean addWhippedCream, boolean isTumbler) { // 커피류
+	private int cost;
+	
+	public MenuDetails(String classification, String menuName, int cost, boolean isICE, boolean sizeUp, boolean extraShot, boolean addWhippedCream, boolean isTumbler){ // 커피류
+		super(classification, menuName, cost);
 		this.setIsICE(isICE);
 		this.setSizeUp(sizeUp);
 		this.setExtraShot(extraShot);
@@ -15,7 +17,8 @@ public class MenuDetails{
 		this.setIsTumbler(isTumbler);
 	}
 	
-	public MenuDetails(boolean isDecaffeniated, boolean isTumbler) { // 콜드브루 류
+	public MenuDetails(String classification, String menuName, int cost, boolean isDecaffeinated, boolean isTumbler) { // 콜드브루 류
+		super(classification, menuName, cost);
 		this.setIsDecaffeinated(isDecaffeinated);
 		this.setIsTumbler(isTumbler);
 	}
