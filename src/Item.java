@@ -1,9 +1,9 @@
 
 public class Item {
-	private String classification; //항목분류
-	private String menuName; //메뉴
-	private int cost; //가격
-	private boolean soldoutStatus; //품절여부 (초기값 false)
+	protected String classification; //항목분류
+	protected String menuName; //메뉴
+	protected int cost; //가격
+	protected boolean soldoutStatus; //품절여부 (초기값 false)
 	
 	public Item(String classification, String menuName, int cost) {
 		this.setClassification(classification);
