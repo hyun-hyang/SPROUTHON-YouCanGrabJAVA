@@ -17,7 +17,7 @@ public class ItemList {
 		ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "디저트"));
 
 		classificationList.add("커피");
-		//fileload();
+		fileload();
 		//printItemList();
 	}
 	
@@ -69,6 +69,10 @@ public class ItemList {
 	}
 	public int getNumOfItemList() {
 		return itemList.size();
+	}
+	
+	public Item getItem (int index) {
+		return itemList.get(index);
 	}
 
 }
