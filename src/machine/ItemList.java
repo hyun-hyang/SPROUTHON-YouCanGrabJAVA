@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class ItemList {
 	public static ArrayList<Item> itemList;
-	static ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "디저트"));
+	public static ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "디저트"));
 	File sourceFile;
 	
 	public ItemList() {

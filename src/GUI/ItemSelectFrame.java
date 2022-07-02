@@ -17,9 +17,9 @@ public class ItemSelectFrame extends JFrame{
 		setSize(900, 1800);
 		setLayout(new BorderLayout());
 		
-		setLocationRelativeTo(null); 
+		setLocationRelativeTo(null);
 		setResizable(false);
-		setBackground(getForeground());
+		setBackground(new Color(83,88,76));
 		
 		
 		ItemList itemList = new ItemList();

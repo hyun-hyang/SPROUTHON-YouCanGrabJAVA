@@ -1,7 +1,7 @@
 package machine;
-import java.io.Serializable;
 
-public class Item implements Serializable{
+
+public class Item {
 	protected String classification; //항목분류
 	protected String menuName; //메뉴
 	protected int cost; //가격
