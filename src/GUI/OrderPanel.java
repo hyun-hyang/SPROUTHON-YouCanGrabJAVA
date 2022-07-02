@@ -13,5 +13,4 @@ public class OrderPanel extends JPanel{
     	String[] headerStrings = {"분류", "메뉴", "가격", "X"};
     }
 	
-
 }

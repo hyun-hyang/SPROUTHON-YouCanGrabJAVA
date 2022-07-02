@@ -24,6 +24,4 @@ public class MenuDetailsFrame extends JFrame{
 		pack();
 		setVisible(true);
 	}
-	
-
 }

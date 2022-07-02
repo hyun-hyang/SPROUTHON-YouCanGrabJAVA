@@ -21,11 +21,13 @@ public class MenuDetailsPanel extends JPanel {
 		Item item = itemList.getItem(menu);
 		this.font2 = new Font("배달의민족 주아",Font.PLAIN, 20);
 		
+		//주문한 메뉴 보여주기
 		JLabel jLabel = new JLabel();
 		jLabel.setText(menu);
 		jLabel.setHorizontalAlignment(JLabel.CENTER);
 		jLabel.setFont(font2);
 		
+		//이미지 넣기
 		ImageIcon icon = new ImageIcon("img-src/beverage.png");
 		Image img = icon.getImage();
 		img = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
