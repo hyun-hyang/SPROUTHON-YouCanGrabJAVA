@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Repos\pch4947\SPROUTHON-YouCanGrabJAVA\SPROUTHON-YouCanGrabJAVA\YouCanGrabJAVA\SPROUTHON-YouCanGrabJAVA\.metadata\.plugins\org.eclipse.jdt.core
-1167275426.index
-3251756713.index
-1865797976.index
