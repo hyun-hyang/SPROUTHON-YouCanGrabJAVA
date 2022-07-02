@@ -10,7 +10,7 @@ public class OrderPanel extends JPanel{
     JScrollPane scrollPane;
     
     public OrderPanel() {
-    	String[] headerStrings = {"분류", "메뉴", "가격"};
+    	String[] headerStrings = {"분류", "메뉴", "가격", "X"};
     }
 	
 

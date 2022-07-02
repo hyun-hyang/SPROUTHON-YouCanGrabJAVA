@@ -32,10 +32,10 @@ public class MenuTitlePanel extends JPanel{
 			//jbtArr[i].setForeground(Color.white);
 			jbtArr[i].setBackground(color1);
 			add(jbtArr[i]);
-			jbtArr[i].addActionListener(new ListenerExample());
+			jbtArr[i].addActionListener(new Listener());
 		}
 	}
-		class ListenerExample implements ActionListener {	
+		class Listener implements ActionListener {	
 			@Override
 			public void actionPerformed(ActionEvent e) {	
 				String writtenString = (String) e.getActionCommand();

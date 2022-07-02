@@ -1,4 +1,6 @@
 package GUI;
+import static machine.ItemList.classificationList;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,19 +22,7 @@ public class MenuListPanel extends JPanel{
 		this.itemList = itemList;
 		setLayout(new GridLayout(5,3,3,3));
 		displayMenuList(classification);
-		JButton menuButton = new JButton();
-		/** 🔘 ADD 클릭 */
-		menuButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "You have been clicked!");
-			}
-		});
 	}
-
-	public MenuListPanel(ItemList itemList, String classification) {
-		
-	}
-	
 	
 	public void displayMenuList(String classification) {
 		Font font2 = new Font("배달의민족 주아",Font.PLAIN, 20);
@@ -41,16 +31,25 @@ public class MenuListPanel extends JPanel{
 		for(int i = 0; i < itemList.getNumOfItemList(); i++) {
 			Item item = itemList.getItem(i);
 			if(item.getClassification().equals(classification)) {
-				jbtArr[i] = new JButton("<html>"+item.getMenuName()+"<br>"+item.getCost()+"</html>", null);			
+				jbtArr[i] = new JButton("<html>"+item.getMenuName()+"<br>"+ item.getCost()+"</html>", null);			
 				jbtArr[i].setFont(font2);
 				jbtArr[i].setBackground(Color.white);
 				jbtArr[i].setHorizontalTextPosition(SwingConstants.CENTER);
 				jbtArr[i].setPreferredSize(new Dimension(300,100));
 				add(jbtArr[i]);
+				jbtArr[i].addActionListener(new Listener());
 			}
 		}
 		updateUI();
 
 	}
-	
+	class Listener implements ActionListener {	
+		@Override
+		public void actionPerformed(ActionEvent e) {	
+			String writtenString = (String) e.getActionCommand();
+			String[] stringarr = writtenString.split("<html>|<br>",3);
+			writtenString= stringarr[1];
+			new MenuDetailsFrame(writtenString, itemList);
+		}
+	};
 }

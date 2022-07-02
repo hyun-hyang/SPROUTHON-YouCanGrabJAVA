@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -83,14 +84,27 @@ public class ItemList {
 		return itemList.get(index);
 	}
 	
+	public Item getItem (String menu) {
+		Item item = null;
+		for(int i = 0; i < getNumOfItemList(); i++) {
+			if(menu.equals(getItem(i).getMenuName())) {
+				item = getItem(i);
+				break;
+			}
+		}
+		return item;
+	}
+	
 	public void printItem (int index) {
 		getItem(index).printItem();
 	}
+	
+	
 	
 	public void printItemList() {
 		for(int i = 0; i < getNumOfItemList(); i++) {
 			getItem(i).printItem();
 		}
 	}
-
+	
 }
