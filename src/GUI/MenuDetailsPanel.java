@@ -32,6 +32,29 @@ public class MenuDetailsPanel extends JPanel {
 		add(jLabel);
 		add(new JLabel(icon, SwingConstants.CENTER));
 		
+		if(item.getClassification().equals("커피")){
+			btIsICE();
+		}
+		
+	}
+	
+	public void btIsICE() {
+		JRadioButton iceButton = new JRadioButton("ice");
+		JRadioButton hotButton = new JRadioButton("hot");
+		
+		iceButton.setSelected(true);
+		
+		ButtonGroup isICE = new ButtonGroup();
+		
+		isICE.add(iceButton);
+		isICE.add(hotButton);
+		
+		this.add(iceButton);
+		this.add(hotButton);
+		
+	}
+	
+	public void SizeU() {
 		
 	}
 }
