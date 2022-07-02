@@ -21,6 +21,7 @@ public class MenuDetailsFrame extends JFrame{
 		
 		add(new MenuDetailsPanel(menu, itemList));
 		
+		pack();
 		setVisible(true);
 	}
 	
