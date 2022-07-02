@@ -33,12 +33,16 @@ public class MenuDetailsPanel extends JPanel {
 		add(new JLabel(icon, SwingConstants.CENTER));
 		
 		if(item.getClassification().equals("커피")){
-			btIsICE();
+			IsICE();
+			SizeUp();
+			ExtraShot();
+			AddWhippedCream();
+			IsTumbler();
 		}
 		
 	}
 	
-	public void btIsICE() {
+	public void IsICE() { //radio
 		JRadioButton iceButton = new JRadioButton("ice");
 		JRadioButton hotButton = new JRadioButton("hot");
 		
@@ -54,7 +58,19 @@ public class MenuDetailsPanel extends JPanel {
 		
 	}
 	
-	public void SizeU() {
+	public void SizeUp() { //radio
+		
+	}
+	
+	public void ExtraShot() { //check
+		JCheckBox extrashotBox = new JCheckBox("ExtraShot");
+		this.add(extrashotBox);
+	}
+	
+	public void AddWhippedCream() { //check
+		
+	}
+	public void IsTumbler() { //radio
 		
 	}
 }
