@@ -34,6 +34,7 @@ public class MenuListPanel extends JPanel{
 	
 	
 	public void displayMenuList(String classification) {
+		removeAll();
 		for(int i = 0; i < itemList.getNumOfItemList(); i++) {
 			Item item = itemList.getItem(i);
 			if(item.getClassification().equals(classification)) {
@@ -41,6 +42,8 @@ public class MenuListPanel extends JPanel{
 				add(menuButton);
 			}
 		}
+		updateUI();
+
 	}
 	
 }

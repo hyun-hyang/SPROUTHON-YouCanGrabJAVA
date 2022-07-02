@@ -14,16 +14,18 @@ public class ItemSelectFrame extends JFrame{
 	
 	public ItemSelectFrame(){
 		setTitle("키오스크");
-		setSize(900, 2100);
+		setSize(900, 1800);
 		setLayout(new BorderLayout());
+		
 		setLocationRelativeTo(null); 
 		setResizable(false);
+		setBackground(getForeground());
 		
 		
 		ItemList itemList = new ItemList();
 		MenuListPanel menuListPanel = new MenuListPanel(itemList);
 		
-		add(new MenuTitlePanel(), BorderLayout.NORTH);
+		add(new MenuTitlePanel(menuListPanel), BorderLayout.NORTH);
 		add(menuListPanel, BorderLayout.CENTER);
 		
 		pack();
