@@ -47,13 +47,27 @@ public class MenuDetailsPanel extends JPanel {
 		} else if(item.getClassification().equals(classificationList.get(1))) {
 			/* 콜드브루 */
 			IsICE();
-//			this.setSizeUp(sizeUp);
-//			this.setIsDecaffeinated(isDecaffeinated);
-//			this.setIsTumbler(isTumbler);
+			SizeUp();
+			IsDecaffeinated();
+			IsTumbler();
 		} else if(item.getClassification().equals(classificationList.get(2))) {
-			
+			// 논 커피
+			IsICE();
+			SizeUp();
+			IsTumbler();
+		} else if(item.getClassification().equals(classificationList.get(3))) {
+			// 티/에이드
+			IsICE();
+			SizeUp();
+			IsTumbler();
+		} else if(item.getClassification().equals(classificationList.get(4))) {
+			// 프라페/블렌디드
+			SizeUp();
+			IsTumbler();
+		}  else if(item.getClassification().equals(classificationList.get(3))) {
+			// 디저트
+			SizeUp();
 		}
-		
 		
 		
 	}
@@ -64,22 +78,6 @@ public class MenuDetailsPanel extends JPanel {
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		
-		JRadioButton iceButton = new JRadioButton("ice");
-		JRadioButton hotButton = new JRadioButton("hot");
-		
-		iceButton.setSelected(true);
-		
-		ButtonGroup isICE = new ButtonGroup();
-		
-		isICE.add(iceButton);
-		isICE.add(hotButton);
-		
-		this.add(iceButton);
-		this.add(hotButton);
-		
-	}
-	
-	public void SizeUp() { //radio //refactor -rename
 		JRadioButton iceButton = new JRadioButton("ICE");
 		JRadioButton hotButton = new JRadioButton("HOT");
 		
@@ -92,20 +90,57 @@ public class MenuDetailsPanel extends JPanel {
 		
 		this.add(iceButton);
 		this.add(hotButton);
+		
+	}
+	
+	public void SizeUp() { //radio 
+		JLabel jLabel = new JLabel("사이즈 업 여부");
+		jLabel.setFont(font2);
+		this.add(jLabel);
+		JCheckBox sizeupBox = new JCheckBox("사이즈 업");
+		this.add(sizeupBox);
 	}
 	
 	public void ExtraShot() { //check
-		JCheckBox extrashotBox = new JCheckBox("ExtraShot");
+		JLabel jLabel = new JLabel("샷 추가 여부");
+		jLabel.setFont(font2);
+		this.add(jLabel);
+		JCheckBox extrashotBox = new JCheckBox("샷 추가");
 		this.add(extrashotBox);
 	}
 	
 	public void AddWhippedCream() { //check
-		
+		JLabel jLabel = new JLabel("휘핑 추가 여부");
+		jLabel.setFont(font2);
+		this.add(jLabel);
+		JCheckBox addwhippedcreamBox = new JCheckBox("휘핑 추가");
+		this.add(addwhippedcreamBox);
 	}
 	public void IsTumbler() { //radio
 		
+		JLabel jLabel = new JLabel("텀블러 사용 여부");
+		jLabel.setFont(font2);
+		this.add(jLabel);
+		
+		JRadioButton noTumButton = new JRadioButton("텀블러 사용");
+		JRadioButton TumButton = new JRadioButton("텀블러 사용 안함");
+		
+		TumButton.setSelected(true);
+		
+		ButtonGroup isTum = new ButtonGroup();
+		
+		isTum.add(noTumButton);
+		isTum.add(TumButton);
+		
+		this.add(noTumButton);
+		this.add(TumButton);
+		
 	}
 	public void IsDecaffeinated() { //check
-		
+		JLabel jLabel = new JLabel("디카페인 변경 여부");
+		jLabel.setFont(font2);
+		this.add(jLabel);
+		JCheckBox isDecaffeinated = new JCheckBox("디카페인으로 변경");
+		this.add(isDecaffeinated);
 	}
 }
