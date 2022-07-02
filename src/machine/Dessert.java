@@ -1,3 +1,4 @@
+package machine;
 
 public class Dessert extends MenuDetails {
 

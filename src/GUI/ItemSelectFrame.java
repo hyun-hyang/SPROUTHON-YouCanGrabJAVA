@@ -1,8 +1,10 @@
+package GUI;
 
 import java.awt.*;
-import java.util.Set;
-
 import javax.swing.*;
+
+import machine.*;
+
 
 @SuppressWarnings("serial")
 public class ItemSelectFrame extends JFrame{
@@ -20,11 +22,12 @@ public class ItemSelectFrame extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
-		ItemList itemList = new ItemList();
+//		add(new MenuTitlePanel(), BorderLayout.NORTH);
+//		
+//		ItemList itemList = new ItemList();
+//		
+//		MenuListPanel menuListPanel = new MenuListPanel(itemList);
+//		add(menuListPanel, BorderLayout.CENTER);
 		
-		add(new MenuTitlePanel(), BorderLayout.NORTH);
-		
-		MenuListPanel menuListPanel = new MenuListPanel(itemList);
-		add(menuListPanel, BorderLayout.CENTER);
 	}
 }

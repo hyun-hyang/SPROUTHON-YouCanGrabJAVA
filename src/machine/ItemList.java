@@ -1,20 +1,21 @@
+package machine;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ItemList {
-	ArrayList<Item> itemList = new ArrayList<> ();;
+	public static ArrayList<Item> itemList;
 	static ArrayList<String> classificationList = new ArrayList<>(Arrays.asList("커피", "콜드브루", "논 커피", "티/에이드", "프라페/블렌디드", "디저트"));
 	File sourceFile;
 	
 	public ItemList() {
+		this.itemList = new ArrayList<> ();
 		fileload();
-		printItemList();
+//		printItemList();
+//		filesave();
 	}
 	
 	public static boolean checkClassification (String newclassification) {
@@ -65,11 +66,11 @@ public class ItemList {
 		
 	}
 //	public void filesave() {
+	/* 파일 직렬화 실패*/
 //		File targetFile = new File("txt-src/gui용 메뉴리스트.txt");
 //		try {
 //			ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(targetFile));
-//			objectOutputStream.writeObject(itemList);
-//			System.out.println(itemList);
+//			objectOutputStream.writeObject(itemList. get(0).printItem());
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
@@ -80,6 +81,10 @@ public class ItemList {
 	
 	public Item getItem (int index) {
 		return itemList.get(index);
+	}
+	
+	public void printItem (int index) {
+		getItem(index).printItem();
 	}
 	
 	public void printItemList() {

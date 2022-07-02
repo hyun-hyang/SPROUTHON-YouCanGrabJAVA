@@ -1,3 +1,4 @@
+package machine;
 
 public class TeaAde extends MenuDetails{
 	

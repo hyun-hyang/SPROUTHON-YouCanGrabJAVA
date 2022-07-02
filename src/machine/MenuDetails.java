@@ -1,3 +1,4 @@
+package machine;
 
 public class MenuDetails extends Item{
 	private boolean isICE; // hot/ice 여부 

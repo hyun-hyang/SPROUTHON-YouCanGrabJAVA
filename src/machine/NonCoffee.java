@@ -1,3 +1,4 @@
+package machine;
 
 public class NonCoffee extends MenuDetails {
 

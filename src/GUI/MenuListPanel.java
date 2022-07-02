@@ -1,23 +1,28 @@
+package GUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import machine.Item;
+import machine.ItemList;
+
+@SuppressWarnings("serial")
 public class MenuListPanel extends JPanel{
 	
 	String classification = "커피";
-	ItemList itemList;
 	JButton menuButton;
+	ItemList itemList;
 
 	public MenuListPanel(ItemList itemList) {
+		this.itemList = itemList;
 		setLayout(new GridLayout(5,3));
 		displayMenuList(classification);
-		
+		JButton menuButton = new JButton();
 		/** 🔘 ADD 클릭 */
 		menuButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//“ADD”가 클릭→ 빈칸으로 구성된 북마크 정보 (BookmarkInfo) 화면을 보여주는 것만 구현.
 				
 			}
 		});
