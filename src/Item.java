@@ -63,5 +63,10 @@ public class Item {
 		}
 	}
 	
+	public void printItem() {
+		System.out.println(classification +","+ menuName +","+ cost +","+ soldoutStatus);
+	}
+	
+	
 	
 }
