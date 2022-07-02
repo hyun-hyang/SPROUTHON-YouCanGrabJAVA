@@ -9,6 +9,11 @@
 
 여유가 되면 차츰 업그레이드 시킬 예정
 
+## 글꼴 다운
+배달의민족 주아체 http://font.woowahan.com/jua/
+
+Tmon소리 블랙  https://minkimusic.tistory.com/995
+
 # gui 간단하게 구현
 
 창1 메뉴선택 후 창2띄우기 계속 떠있기 오른쪽위 장바구니 누르면 창3켜지기
