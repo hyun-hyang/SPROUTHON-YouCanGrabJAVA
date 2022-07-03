@@ -19,7 +19,7 @@ public class MenuDetails extends Item{
 	
 	public void setSizeUp(boolean sizeUp) {
 		this.sizeUp = sizeUp;
-		if(this.sizeUp) this.cost += 2000;
+		if(this.sizeUp) this.cost += 1000;
 	}
 	
 	public void setExtraShot(boolean extraShot) {

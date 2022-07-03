@@ -65,6 +65,15 @@ public class Item {
 		}
 	}
 	
+	public void DownCost(int cost) {
+		this.cost -= cost;
+	}
+	
+	public void UpCost(int cost) {
+		this.cost += cost;
+	}
+	
+	
 	public void printItem() {
 		System.out.println(classification +","+ menuName +","+ cost +","+ soldoutStatus);
 	}

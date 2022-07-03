@@ -2,9 +2,9 @@ package GUI;
 
 import javax.swing.*;
 
-import machine.Coffee;
 import machine.Item;
 import machine.ItemList;
+import machine.MenuDetails;
 
 import static machine.ItemList.classificationList;
 
@@ -19,14 +19,16 @@ public class MenuDetailsPanel extends JPanel {
 	
 	Font font2;
 	JLabel costJLabel;
+	MenuDetails menuDetails;
 
 	public MenuDetailsPanel(String menu, ItemList itemList) {
 		
 		setLayout(new GridLayout(0,1));
 		setBackground(Color.white);
 		
-		
 		Item item = itemList.getItem(menu);
+		this.menuDetails = new MenuDetails(item.getClassification(), item.getMenuName(), item.getCost());
+		
 		Font font1 = new Font("Tmon몬소리 Black",Font.BOLD,30);
 		this.font2 = new Font("배달의민족 주아",Font.PLAIN, 20);
 		
@@ -50,7 +52,7 @@ public class MenuDetailsPanel extends JPanel {
 		
 		//가격 보여주기
 		this.costJLabel = new JLabel();
-		String costString = String.valueOf(item.getCost());
+		String costString = String.valueOf(menuDetails.getCost());
 		costJLabel.setText(costString+"원");
 		costJLabel.setHorizontalAlignment(JLabel.CENTER);
 		costJLabel.setFont(font2);
@@ -62,6 +64,8 @@ public class MenuDetailsPanel extends JPanel {
 		add(titleJLabel);
 		add(new JLabel(icon, SwingConstants.CENTER));
 		add(jLabel);
+		
+		
 		
 		if(item.getClassification().equals(classificationList.get(0))){
 			/* 커피 */
@@ -108,6 +112,13 @@ public class MenuDetailsPanel extends JPanel {
 		});
 	}
 	
+	public void updateCost() {
+		String costString = String.valueOf(menuDetails.getCost());
+		costJLabel.setText(costString+"원");
+		updateUI();
+	}
+	
+	
 	public void IsICE() { //radio
 		
 		JLabel jLabel = new JLabel("HOT&ICE");
@@ -133,7 +144,6 @@ public class MenuDetailsPanel extends JPanel {
 		jp1.add(iceButton);
 		jp1.add(hotButton);
 		this.add(jp1);
-		
 	}
 	
 	public void SizeUp() { //radio 
@@ -154,8 +164,13 @@ public class MenuDetailsPanel extends JPanel {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				if(sizeupBox.isSelected()) {}
-				
+				if(sizeupBox.isSelected()) {
+					menuDetails.setSizeUp(true);
+				} else if (!sizeupBox.isSelected()) {
+					menuDetails.setSizeUp(false);
+					menuDetails.DownCost(1000);
+				}
+				updateCost();
 			}
 		});
 	}
@@ -174,6 +189,20 @@ public class MenuDetailsPanel extends JPanel {
 		jp.add(extrashotBox);
 		this.add(jp);
 		
+		extrashotBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					menuDetails.setExtraShot(true);
+				} else{
+					menuDetails.setExtraShot(false);
+					menuDetails.DownCost(300);
+				}
+				updateCost();
+			}
+		});
+		
 	}
 	
 	public void AddWhippedCream() { //check
@@ -189,6 +218,20 @@ public class MenuDetailsPanel extends JPanel {
 		jp.add(jLabel);
 		jp.add(addwhippedcreamBox);
 		this.add(jp);
+		
+		addwhippedcreamBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					menuDetails.setAddWhippedCream(true);
+				} else{
+					menuDetails.setAddWhippedCream(false);
+					menuDetails.DownCost(300);
+				}
+				updateCost();
+			}
+		});
 		
 	}
 	public void IsTumbler() { //radio
@@ -216,8 +259,33 @@ public class MenuDetailsPanel extends JPanel {
 		jp1.add(noTumButton);
 		jp1.add(TumButton);
 		this.add(jp1);
+		TumButton.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(TumButton.isSelected()) {
+					menuDetails.setIsTumbler(true);
+				}
+				updateCost();
+			}
+		});
+		noTumButton.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(noTumButton.isSelected()) {
+					menuDetails.setIsTumbler(false);
+					menuDetails.UpCost(300);
+				}
+				updateCost();
+			}
+		});
+		
+		
 		
 	}
+
+	
 	public void IsDecaffeinated() { //check
 		JLabel jLabel = new JLabel("디카페인 변경 (+500원)");
 		jLabel.setFont(font2);
@@ -232,6 +300,23 @@ public class MenuDetailsPanel extends JPanel {
 		jp.add(isDecaffeinated);
 		this.add(jp);
 		
+		isDecaffeinated.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					menuDetails.setIsDecaffeinated(true);
+				} else{
+					menuDetails.setIsDecaffeinated(false);
+					menuDetails.DownCost(500);
+				}
+				updateCost();
+			}
+		});
 		
 	}
+	
 }
+
+
+
