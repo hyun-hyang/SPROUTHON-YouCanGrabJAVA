@@ -17,15 +17,17 @@ public class MenuDetailsPanel extends JPanel {
 	public MenuDetailsPanel(String menu, ItemList itemList) {
 		
 		setLayout(new GridLayout(0,1));
+		setBackground(Color.white);
 		
 		Item item = itemList.getItem(menu);
+		Font font1 = new Font("Tmon몬소리 Black",Font.BOLD,30);
 		this.font2 = new Font("배달의민족 주아",Font.PLAIN, 20);
 		
-		//주문한 메뉴 보여주기
-		JLabel jLabel = new JLabel();
-		jLabel.setText(menu);
-		jLabel.setHorizontalAlignment(JLabel.CENTER);
-		jLabel.setFont(font2);
+		//메뉴상세
+		JLabel titleJLabel = new JLabel();
+		titleJLabel.setText("메뉴상세");
+		titleJLabel.setHorizontalAlignment(JLabel.CENTER);
+		titleJLabel.setFont(font1);
 		
 		//이미지 넣기
 		ImageIcon icon = new ImageIcon("img-src/beverage.png");
@@ -33,9 +35,22 @@ public class MenuDetailsPanel extends JPanel {
 		img = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		icon = new ImageIcon(img);
 		
+		//주문한 메뉴 보여주기
+		JLabel jLabel = new JLabel();
+		jLabel.setText(menu);
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		jLabel.setFont(font2);
 		
-		add(jLabel);
+		//가격 보여주기
+		JLabel costJLabel = new JLabel();
+		String costString = String.valueOf(item.getCost());
+		costJLabel.setText(costString+"원");
+		costJLabel.setHorizontalAlignment(JLabel.CENTER);
+		costJLabel.setFont(font2);
+		
+		add(titleJLabel);
 		add(new JLabel(icon, SwingConstants.CENTER));
+		add(jLabel);
 		
 		if(item.getClassification().equals(classificationList.get(0))){
 			/* 커피 */
@@ -69,7 +84,7 @@ public class MenuDetailsPanel extends JPanel {
 			SizeUp();
 		}
 		
-		
+		add(costJLabel);
 		
 	}
 	
