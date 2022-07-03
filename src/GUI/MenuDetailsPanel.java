@@ -8,6 +8,8 @@ import machine.ItemList;
 import static machine.ItemList.classificationList;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 @SuppressWarnings("serial")
 public class MenuDetailsPanel extends JPanel {
@@ -48,6 +50,10 @@ public class MenuDetailsPanel extends JPanel {
 		costJLabel.setHorizontalAlignment(JLabel.CENTER);
 		costJLabel.setFont(font2);
 		
+		//주문 버튼
+		JButton orderButton = new JButton("주문하기");
+		
+		
 		add(titleJLabel);
 		add(new JLabel(icon, SwingConstants.CENTER));
 		add(jLabel);
@@ -85,7 +91,16 @@ public class MenuDetailsPanel extends JPanel {
 		}
 		
 		add(costJLabel);
+		add(orderButton);
 		
+	
+		orderButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "주문이 완료되었습니다!");
+			}
+		});
 	}
 	
 	public void IsICE() { //radio
@@ -193,8 +208,17 @@ public class MenuDetailsPanel extends JPanel {
 	public void IsDecaffeinated() { //check
 		JLabel jLabel = new JLabel("디카페인 변경 (+500원)");
 		jLabel.setFont(font2);
-		this.add(jLabel);
+		
 		JCheckBox isDecaffeinated = new JCheckBox("디카페인으로 변경");
-		this.add(isDecaffeinated);
+		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		isDecaffeinated.setHorizontalAlignment(JLabel.CENTER);
+		
+		JPanel jp = new JPanel(new FlowLayout());
+		jp.add(jLabel);
+		jp.add(isDecaffeinated);
+		this.add(jp);
+		
+		
 	}
 }
