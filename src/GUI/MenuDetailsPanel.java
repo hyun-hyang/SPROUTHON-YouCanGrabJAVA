@@ -94,7 +94,7 @@ public class MenuDetailsPanel extends JPanel {
 	}
 	
 	public void SizeUp() { //radio 
-		JLabel jLabel = new JLabel("사이즈 업 여부");
+		JLabel jLabel = new JLabel("사이즈 업 (+1000원)");
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		JCheckBox sizeupBox = new JCheckBox("사이즈 업");
@@ -102,7 +102,7 @@ public class MenuDetailsPanel extends JPanel {
 	}
 	
 	public void ExtraShot() { //check
-		JLabel jLabel = new JLabel("샷 추가 여부");
+		JLabel jLabel = new JLabel("샷 추가 (+300원)");
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		JCheckBox extrashotBox = new JCheckBox("샷 추가");
@@ -110,7 +110,7 @@ public class MenuDetailsPanel extends JPanel {
 	}
 	
 	public void AddWhippedCream() { //check
-		JLabel jLabel = new JLabel("휘핑 추가 여부");
+		JLabel jLabel = new JLabel("휘핑 추가 (+300원)");
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		JCheckBox addwhippedcreamBox = new JCheckBox("휘핑 추가");
@@ -118,7 +118,7 @@ public class MenuDetailsPanel extends JPanel {
 	}
 	public void IsTumbler() { //radio
 		
-		JLabel jLabel = new JLabel("텀블러 사용 여부");
+		JLabel jLabel = new JLabel("텀블러 사용 (-300원)");
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		
@@ -137,7 +137,7 @@ public class MenuDetailsPanel extends JPanel {
 		
 	}
 	public void IsDecaffeinated() { //check
-		JLabel jLabel = new JLabel("디카페인 변경 여부");
+		JLabel jLabel = new JLabel("디카페인 변경 (+500원)");
 		jLabel.setFont(font2);
 		this.add(jLabel);
 		JCheckBox isDecaffeinated = new JCheckBox("디카페인으로 변경");
