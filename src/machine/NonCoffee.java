@@ -1,6 +1,10 @@
 package machine;
 
 public class NonCoffee extends MenuDetails {
+	
+	public NonCoffee(String classification, String menuName, int cost) {
+		super(classification, menuName, cost);
+	}
 
 	public NonCoffee(String classification, String menuName, int cost, boolean isICE, boolean sizeUp, boolean isTumbler) {
 		super(classification, menuName, cost);
