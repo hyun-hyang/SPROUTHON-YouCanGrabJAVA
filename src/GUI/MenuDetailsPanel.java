@@ -16,7 +16,7 @@ public class MenuDetailsPanel extends JPanel {
 
 	public MenuDetailsPanel(String menu, ItemList itemList) {
 		
-		setLayout(new GridLayout(8,1));
+		setLayout(new GridLayout(0,1));
 		
 		Item item = itemList.getItem(menu);
 		this.font2 = new Font("배달의민족 주아",Font.PLAIN, 20);
@@ -70,16 +70,21 @@ public class MenuDetailsPanel extends JPanel {
 		}
 		
 		
+		
 	}
 	
 	public void IsICE() { //radio
 		
 		JLabel jLabel = new JLabel("HOT&ICE");
 		jLabel.setFont(font2);
-		this.add(jLabel);
+		//this.add(jLabel);
 		
 		JRadioButton iceButton = new JRadioButton("ICE");
 		JRadioButton hotButton = new JRadioButton("HOT");
+		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		iceButton.setHorizontalAlignment(JLabel.CENTER);
+		hotButton.setHorizontalAlignment(JLabel.CENTER);
 		
 		iceButton.setSelected(true);
 		
@@ -88,33 +93,60 @@ public class MenuDetailsPanel extends JPanel {
 		isICE.add(iceButton);
 		isICE.add(hotButton);
 		
-		this.add(iceButton);
-		this.add(hotButton);
+		JPanel jp1 = new JPanel(new GridLayout(0,1));
+		jp1.add(jLabel);
+		jp1.add(iceButton);
+		jp1.add(hotButton);
+		this.add(jp1);
 		
 	}
 	
 	public void SizeUp() { //radio 
 		JLabel jLabel = new JLabel("사이즈 업 여부");
 		jLabel.setFont(font2);
-		this.add(jLabel);
+		
 		JCheckBox sizeupBox = new JCheckBox("사이즈 업");
-		this.add(sizeupBox);
+		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		sizeupBox.setHorizontalAlignment(JLabel.CENTER);
+		
+		JPanel jp2 = new JPanel(new FlowLayout());
+		jp2.add(jLabel);
+		jp2.add(sizeupBox);
+		this.add(jp2);
+		
 	}
 	
 	public void ExtraShot() { //check
 		JLabel jLabel = new JLabel("샷 추가 여부");
 		jLabel.setFont(font2);
-		this.add(jLabel);
+		
 		JCheckBox extrashotBox = new JCheckBox("샷 추가");
-		this.add(extrashotBox);
+		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		extrashotBox.setHorizontalAlignment(JLabel.CENTER);
+		
+		JPanel jp = new JPanel(new FlowLayout());
+		jp.add(jLabel);
+		jp.add(extrashotBox);
+		this.add(jp);
+		
 	}
 	
 	public void AddWhippedCream() { //check
 		JLabel jLabel = new JLabel("휘핑 추가 여부");
 		jLabel.setFont(font2);
-		this.add(jLabel);
+		
 		JCheckBox addwhippedcreamBox = new JCheckBox("휘핑 추가");
-		this.add(addwhippedcreamBox);
+		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		addwhippedcreamBox.setHorizontalAlignment(JLabel.CENTER);
+		
+		JPanel jp = new JPanel(new FlowLayout());
+		jp.add(jLabel);
+		jp.add(addwhippedcreamBox);
+		this.add(jp);
+		
 	}
 	public void IsTumbler() { //radio
 		
@@ -125,6 +157,10 @@ public class MenuDetailsPanel extends JPanel {
 		JRadioButton noTumButton = new JRadioButton("텀블러 사용");
 		JRadioButton TumButton = new JRadioButton("텀블러 사용 안함");
 		
+		jLabel.setHorizontalAlignment(JLabel.CENTER);
+		noTumButton.setHorizontalAlignment(JLabel.CENTER);
+		TumButton.setHorizontalAlignment(JLabel.CENTER);
+		
 		TumButton.setSelected(true);
 		
 		ButtonGroup isTum = new ButtonGroup();
@@ -132,8 +168,11 @@ public class MenuDetailsPanel extends JPanel {
 		isTum.add(noTumButton);
 		isTum.add(TumButton);
 		
-		this.add(noTumButton);
-		this.add(TumButton);
+		JPanel jp1 = new JPanel(new GridLayout(0,1));
+		jp1.add(jLabel);
+		jp1.add(noTumButton);
+		jp1.add(TumButton);
+		this.add(jp1);
 		
 	}
 	public void IsDecaffeinated() { //check

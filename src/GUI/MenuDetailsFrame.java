@@ -14,10 +14,10 @@ public class MenuDetailsFrame extends JFrame{
 	public MenuDetailsFrame(String menu, ItemList itemList) {
 		
 		setTitle("메뉴 사부사항");
-		setSize(900, 1800);
+		setSize(160000, 1800);
 		
 		setLocationRelativeTo(rootPane);
-		setResizable(false);
+		//setResizable(false);
 		
 		add(new MenuDetailsPanel(menu, itemList));
 		
