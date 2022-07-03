@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 
+import machine.Coffee;
 import machine.Item;
 import machine.ItemList;
 
@@ -10,16 +11,20 @@ import static machine.ItemList.classificationList;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 @SuppressWarnings("serial")
 public class MenuDetailsPanel extends JPanel {
 	
 	Font font2;
+	JLabel costJLabel;
 
 	public MenuDetailsPanel(String menu, ItemList itemList) {
 		
 		setLayout(new GridLayout(0,1));
 		setBackground(Color.white);
+		
 		
 		Item item = itemList.getItem(menu);
 		Font font1 = new Font("Tmon몬소리 Black",Font.BOLD,30);
@@ -44,7 +49,7 @@ public class MenuDetailsPanel extends JPanel {
 		jLabel.setFont(font2);
 		
 		//가격 보여주기
-		JLabel costJLabel = new JLabel();
+		this.costJLabel = new JLabel();
 		String costString = String.valueOf(item.getCost());
 		costJLabel.setText(costString+"원");
 		costJLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -145,6 +150,14 @@ public class MenuDetailsPanel extends JPanel {
 		jp2.add(sizeupBox);
 		this.add(jp2);
 		
+		sizeupBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(sizeupBox.isSelected()) {}
+				
+			}
+		});
 	}
 	
 	public void ExtraShot() { //check

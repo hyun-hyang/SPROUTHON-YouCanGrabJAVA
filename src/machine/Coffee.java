@@ -2,6 +2,10 @@ package machine;
 
 public class Coffee extends MenuDetails {
 	
+	public Coffee(String classification, String menuName, int cost) {
+		super(classification, menuName, cost);
+	}
+	
 	public Coffee(String classification, String menuName, int cost, boolean isICE, boolean sizeUp, boolean extraShot, boolean addWhippedCream, boolean isTumbler) {
 		super(classification, menuName, cost);
 		this.setIsICE(isICE);
