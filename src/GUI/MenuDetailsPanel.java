@@ -64,7 +64,7 @@ public class MenuDetailsPanel extends JPanel {
 			// 프라페/블렌디드
 			SizeUp();
 			IsTumbler();
-		}  else if(item.getClassification().equals(classificationList.get(3))) {
+		}  else if(item.getClassification().equals(classificationList.get(5))) {
 			// 디저트
 			SizeUp();
 		}
